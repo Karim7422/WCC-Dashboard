@@ -1,7 +1,6 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.9",
-    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "flowbite": "^2.5.1"
