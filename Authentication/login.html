@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <!-- ?-------------------------------Meta Tags -------------------------------------------->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ?-------------------------------Website Title ---------------------------------------->
+    <title>WCC Admin Dashboard</title>
+    <!-- ?-------------------------------Tailwind CSS Files ----------------------------------->
+    <link rel="stylesheet" href="../src/css/input.css" />
+    <link rel="stylesheet" href="../src/css/output.css" />
+    <!-- ?-------------------------------FavIcon----------------------------------------------->
+
+</head>
+
+<body class="flex flex-wrap justify-center items-center font-Rubik">
+    <div class="h-screen w-full md:w-1/2 flex flex-col gap-2 items-center justify-center ">
+        <div>
+            <h4 class="font-bold text-3xl">تسجيل الدخول</h4>
+            <p> أدخل البريد الألكتروني وكلمة السر </p>
+        </div>
+        <div class="flex flex-col">
+            <div>
+                <form class="flex flex-col gap-2" action="">
+                    <input class="border-2   rounded-md focus:border-blue-500 px-2 py-1" type="email" name="" id="emailInput" placeholder="البريد الألكتروني">
+                    <p class="text-email mt-2 hidden peer-invalid:visible text-pink-600 text-sm">
+                        خطأ في البريد الألكتروني
+                    </p>
+
+                    <input class="border-2    rounded-md focus:border-blue-500 px-2 py-1" type="password" name="" id="passwordInput" placeholder="كلمة السر">
+                    <p class="text-password mt-2 hidden peer-invalid:visible text-pink-600 text-sm">
+                        خطأ في كلمة السر.
+                    </p>
+
+                    <div class="flex gap-1 items-center mb-2">
+                        <p>تذكرني</p>
+                        <input type="checkbox" name="" id="">
+                    </div>
+                </form>
+            </div>
+            <div class="flex justify-center items-center">
+                <a class="bg-blue-500 text-white px-4 py-2 rounded-md w-full text-center  border-2 border-transparent hover:bg-transparent hover:border-blue-500 hover:text-blue-500 transition-all duration-300"
+                    href="../index.html">تسجيل
+                    الدخول</a>
+            </div>
+        </div>
+    </div>
+    <div class="hidden h-screen w-full md:w-1/2 md:flex flex-col items-center justify-center bg-neutral-600">
+        <img src="../images/logo-removebg-preview.png" alt="">
+    </div>
+    <!-- ?------------------------------Main JS File ------------------------------------>
+    <script src="../src/js/main.js"></script>
+</body>
+
+</html>

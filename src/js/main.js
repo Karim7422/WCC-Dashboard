@@ -1,0 +1,9 @@
+const userData = localStorage.getItem("User Data");
+const projectData = localStorage.getItem("Project Data");
+const blogsData = localStorage.getItem("Blogs Data");
+const totalUsers = JSON.parse(userData);
+const totalProjects = JSON.parse(projectData);
+const totalBlogs = JSON.parse(blogsData);
+document.getElementById("total-users").innerHTML = `${totalUsers.length}`;
+document.getElementById("total-projects").innerHTML = `${totalProjects.length}`;
+document.getElementById("total-blogs").innerHTML = `${totalBlogs.length}`;
