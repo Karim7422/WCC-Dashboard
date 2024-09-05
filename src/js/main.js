@@ -1,9 +1,50 @@
-const userData = localStorage.getItem("User Data");
-const projectData = localStorage.getItem("Project Data");
-const blogsData = localStorage.getItem("Blogs Data");
-const totalUsers = JSON.parse(userData);
-const totalProjects = JSON.parse(projectData);
-const totalBlogs = JSON.parse(blogsData);
-document.getElementById("total-users").innerHTML = `${totalUsers.length}`;
-document.getElementById("total-projects").innerHTML = `${totalProjects.length}`;
-document.getElementById("total-blogs").innerHTML = `${totalBlogs.length}`;
+const welcomeUser = document.getElementById("welcome-user");
+async function getUserName() {
+  const res = await fetch(
+    "https://wcc-api.onrender.com/v1/auth/login/token",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("WCC Token")}`,
+      },
+    },
+    {
+      credentials: "include",
+    }
+  );
+  if (res.ok) {
+    const data = await res.json();
+    // console.log(data);
+    welcomeUser.innerHTML = `مرحباً ${data.data.user.fullName}`;
+  } else {
+    const errorData = await res.json();
+    console.log(errorData);
+  }
+}
+
+getUserName();
+const logoutBtn = document.getElementById("logout-btn");
+logoutBtn.addEventListener("click", () => {
+  logout();
+});
+async function logout() {
+  const response = await fetch(
+    "https://wcc-api.onrender.com/v1/auth/logout",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("WCC Token")}`,
+      },
+    },
+    {
+      credentials: "include",
+    }
+  );
+  if (response.ok) {
+    const data = await response.json();
+    localStorage.removeItem("WCC Token");
+    location.href = "../../Authentication/login.html";
+    console.log(data);
+  } else {
+    const errorData = await response.json();
+    console.log(errorData);
+  }
+}

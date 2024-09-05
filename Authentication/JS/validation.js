@@ -4,10 +4,8 @@ const lastNameRegex = /^[a-zA-Z\u0600-\u06FF\s]{2,}$/;
 const userNameRegex = /^[a-zA-Z\u0600-\u06FF\s]{2,}$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex =
-/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$#!%*?&]{8,64}$/;
+  /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$#!%*?&]{8,64}$/;
 const textWorningUsers = document.querySelectorAll(".text-worning-users");
-
-
 
 //! --------------Functions--------------------
 // ? Add New User
@@ -102,15 +100,3 @@ lastNameInput[0].addEventListener("focusout", lastNameValidation);
 userNameInput[0].addEventListener("focusout", userNameValidation);
 emailInput[0].addEventListener("focusout", emailValidation);
 passwordInput.addEventListener("focusout", passwordValidation);
-
-
-
-
-
-
-
-
-
-
-
-
